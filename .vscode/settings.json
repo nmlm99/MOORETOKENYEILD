@@ -1,0 +1,6 @@
+{
+    "solidity-va.parser.parseImports": false,
+    "solidity-va.mode.active": false,
+    "solidity-va.preview.dot": true,
+    "solidity-va.preview.markdown": true
+}
