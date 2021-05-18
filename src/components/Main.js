@@ -1,6 +1,31 @@
 import React, { Component } from 'react'
 import dai from '../dai.png'
+import moore from '../moore.jpg'
+import matic from '../matic.png'
+import { Dropdown } from 'semantic-ui-react'
 
+const cryptoOptions = [
+  {
+    key: 'mDAI',
+    text: 'mDAI',
+    value: 'mDAI',
+    image: dai,
+  },
+  {
+    key: 'MOORE',
+    text: 'MOORE',
+    value: 'MOORE',
+    image: moore,
+  },
+  {
+    key: 'MATIC',
+    text: 'MATIC',
+    value: 'MATIC',
+    image: matic,
+  },
+  ]
+
+  
 class Main extends Component {
 
   render() {
@@ -17,7 +42,7 @@ class Main extends Component {
           <tbody>
             <tr>
               <td>{window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')} mDAI</td>
-              <td>{window.web3.utils.fromWei(this.props.MOORETokenBalance, 'Ether')} MOOREP</td>
+              <td>{window.web3.utils.fromWei(this.props.dappTokenBalance, 'Ether')} DAPP</td>
             </tr>
           </tbody>
         </table>
@@ -48,8 +73,16 @@ class Main extends Component {
                   required />
                 <div className="input-group-append">
                   <div className="input-group-text">
-                    <img src={dai} height='32' alt=""/>
-                    &nbsp;&nbsp;&nbsp; mDAI
+                    
+                    {/* <img src={dai} height='32' alt=""/>
+                    &nbsp;&nbsp;&nbsp; mDAI */}
+                    <span>{' '}
+                    <Dropdown
+                      inline
+                      options={cryptoOptions}
+                      defaultValue={cryptoOptions[0].value}
+                      />
+                      </span>
                   </div>
                 </div>
               </div>
@@ -72,4 +105,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Main ;
